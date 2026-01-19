@@ -84,6 +84,7 @@ public class Main {
                 }
                 int nextTime=jihun[x][y]+1;
                 if (maze[nx][ny]!='#'&&jihun[nx][ny]==-1) {
+                    //이미 fire 부분은 다끝난상황이니까 -1이면 안전 확정임
                     if(fire[nx][ny]==-1||fire[nx][ny]>nextTime){
                         jihun[nx][ny]=jihun[x][y]+1;
                         jihun_q.offer(new int[]{nx,ny});
@@ -96,5 +97,6 @@ public class Main {
         }
         System.out.println("IMPOSSIBLE");
     }
+
 
 }
