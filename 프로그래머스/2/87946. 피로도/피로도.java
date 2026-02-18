@@ -7,11 +7,11 @@ class Solution {
         int count=0;
         n=dungeons.length;
         visited=new boolean[n];
-        dfs(k,dungeons,0,0);
+        dfs(k,dungeons,0);
         answer=result;
         return answer;
     }
-    static void dfs(int k,int[][]dungeons, int count, int depth){
+    static void dfs(int k,int[][]dungeons, int count){
         
         result=Math.max(result,count);      
         
@@ -19,7 +19,7 @@ class Solution {
              if(!visited[i]){
                  if(dungeons[i][0]<=k){
                      visited[i]=true;
-                     dfs(k-dungeons[i][1], dungeons,count+1,depth+1);
+                     dfs(k-dungeons[i][1], dungeons,count+1);
                      visited[i]=false;
                  }
              }          
