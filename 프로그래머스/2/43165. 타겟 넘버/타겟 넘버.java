@@ -6,16 +6,14 @@ class Solution {
         answer=count;
         return answer;
     }
-    static void dfs(int[]numbers, int index, int sum, int target){      if(index==numbers.length){
+    static void dfs(int[]numbers, int index, int sum, int target){      
+        if(index==numbers.length){
             if(sum==target){
-            count++;
-        }
-        return;
-    }
-       
-                                                                        
+                count++;
+            }
+            return;
+        }                                                                        
        dfs(numbers, index+1, sum+numbers[index], target); 
        dfs(numbers, index+1, sum-numbers[index], target); 
-
     }
 }
